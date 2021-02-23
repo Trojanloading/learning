@@ -2449,10 +2449,172 @@ for x in (1, 2, 3): print x,       1 2 3                          迭代
 ```
 
 ### 元组索引，截取
+因为元组也是一个序列，所以我们可以访问元组中的指定位置的元素，也可以截取索引中的一段元素，如下所示：
+
+元组：
+```
+L = ('spam', 'Spam', 'SPAM!')
+```
+```
+Python 表达式       结果                 描述
+L[2]               'SPAM!'             读取第三个元素
+L[-2]              'Spam'              反向读取，读取倒数第二个元素
+L[1:]              ('Spam', 'SPAM!')   截取元素
+```
+### 无关闭分隔符
+任意无符号的对象，以逗号隔开，默认为元组，如下实例：
+```
+#!/usr/bin/python
  
+print 'abc', -4.24e93, 18+6.6j, 'xyz'
+x, y = 1, 2
+print "Value of x , y : ", x,y
+```
+以上实例运行结果：
+```
+abc -4.24e+93 (18+6.6j) xyz
+Value of x , y : 1 2
+```
 
+### 元组内置函数
+Python元组包含了以下内置函数
+```
+序号     方法及描述
+1       cmp(tuple1, tuple2)
+        比较两个元组元素。
+2       len(tuple)
+        计算元组元素个数。
+3       max(tuple)
+        返回元组中元素最大值。
+4       min(tuple)
+        返回元组中元素最小值。
+5       tuple(seq)
+        将列表转换为元组。
+```
 
+## 二十、Python 字典(Dictionary)
+字典是另一种可变容器模型，且可存储任意类型对象。
 
+字典的每个键值 key=>value 对用冒号 : 分割，每个键值对之间用逗号 , 分割，整个字典包括在花括号 {} 中 ,格式如下所示：
+```
+d = {key1 : value1, key2 : value2 }
+```
+键一般是唯一的，如果重复最后的一个键值对会替换前面的，值不需要唯一。
+```
+>>> dict = {'a': 1, 'b': 2, 'b': '3'}
+>>> dict['b']
+'3'
+>>> dict
+{'a': 1, 'b': '3'}
+```
+值可以取任何数据类型，但键必须是不可变的，如字符串，数字或元组。
+
+一个简单的字典实例：
+```
+dict = {'Alice': '2341', 'Beth': '9102', 'Cecil': '3258'}
+```
+也可如此创建字典：
+```
+dict1 = { 'abc': 456 }
+dict2 = { 'abc': 123, 98.6: 37 }
+```
+
+### 访问字典里的值
+把相应的键放入熟悉的方括弧，如下实例:
+```
+#!/usr/bin/python
+ 
+dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
+ 
+print "dict['Name']: ", dict['Name']
+print "dict['Age']: ", dict['Age']
+```
+以上实例输出结果：
+```
+dict['Name']:  Zara
+dict['Age']:  7
+```
+如果用字典里没有的键访问数据，会输出错误如下：
+```
+#!/usr/bin/python
+ 
+dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
+ 
+print "dict['Alice']: ", dict['Alice']
+```
+以上实例输出结果：
+```
+dict['Alice']: 
+Traceback (most recent call last):
+  File "test.py", line 5, in <module>
+    print "dict['Alice']: ", dict['Alice']
+KeyError: 'Alice'
+```
+
+### 修改字典
+向字典添加新内容的方法是增加新的键/值对，修改或删除已有键/值对如下实例:
+```
+#!/usr/bin/python
+ 
+dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
+ 
+dict['Age'] = 8 # 更新
+dict['School'] = "RUNOOB" # 添加
+ 
+ 
+print "dict['Age']: ", dict['Age']
+print "dict['School']: ", dict['School']
+```
+以上实例输出结果：
+```
+dict['Age']:  8
+dict['School']:  RUNOOB
+```
+
+### 删除字典元素
+能删单一的元素也能清空字典，清空只需一项操作。
+
+显示删除一个字典用del命令，如下实例：
+```
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+ 
+dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
+ 
+del dict['Name']  # 删除键是'Name'的条目
+dict.clear()      # 清空字典所有条目
+del dict          # 删除字典
+ 
+print "dict['Age']: ", dict['Age'] 
+print "dict['School']: ", dict['School']
+```
+但这会引发一个异常，因为用del后字典不再存在：
+```
+dict['Age']:
+Traceback (most recent call last):
+  File "test.py", line 8, in <module>
+    print "dict['Age']: ", dict['Age'] 
+TypeError: 'type' object is unsubscriptable
+```
+注：del()方法后面也会讨论。
+
+字典键的特性:
+字典值可以没有限制地取任何python对象，既可以是标准的对象，也可以是用户定义的，但键不行。
+
+两个重要的点需要记住：
+
+1）不允许同一个键出现两次。创建时如果同一个键被赋值两次，后一个值会被记住，如下实例：
+```
+#!/usr/bin/python
+ 
+dict = {'Name': 'Zara', 'Age': 7, 'Name': 'Manni'} 
+ 
+print "dict['Name']: ", dict['Name']
+```
+以上实例输出结果：
+```
+dict['Name']:  Manni
+```
 
 
 
