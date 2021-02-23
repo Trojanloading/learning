@@ -480,7 +480,7 @@ getopt.getopt(args, options[, long_options])
 
 异常的参数是一个字符串，表示错误的原因。属性 msg 和 opt 为相关选项的错误信息。
 
-## Python 变量类型
+## 六、Python 变量类型
 变量存储在内存中的值，这就意味着在创建变量时会在内存中开辟一个空间。
 
 基于变量的数据类型，解释器会分配指定内存，并决定什么数据可以被存储在内存中。
@@ -806,7 +806,7 @@ hex(x)  将一个整数转换为一个十六进制字符串
 oct(x)  将一个整数转换为一个八进制字符串
 ```
 
-## Pythoon 运算符
+## 七、Pythoon 运算符
 
 ### 什么是运算符？
 本章节主要说明Python的运算符。举个简单的例子 4 +5 = 9 。 例子中，4 和 5 被称为操作数，"+" 称为运算符。
@@ -1277,7 +1277,7 @@ print "a + (b * c) / d 运算结果为：",  e
 a + (b * c) / d 运算结果为： 50
 ```
 
-## Python 条件语句
+## 八、Python 条件语句
 
 ### Python条件语句
 Python条件语句是通过一条或多条语句的执行结果（True或者False）来决定执行的代码块。
@@ -1398,7 +1398,7 @@ print "Good bye!"
 Good bye!
 ```
 
-## Python 循环语句
+## 九、Python 循环语句
 
 本章节将向大家介绍Python的循环语句，程序在一般情况下是按顺序执行的。
 
@@ -1423,7 +1423,7 @@ continue 语句      在语句块执行过程中终止当前循环，跳出该�
 pass 语句          pass是空语句，是为了保持程序结构的完整性。
 ```
 
-## Python While 循环语句
+## 十、Python While 循环语句
 Python 编程中 while 语句用于循环执行程序，即在某条件下，循环执行某段程序，以处理需要重复处理的相同任务。其基本形式为：
 ```
 while 判断条件(condition)：
@@ -1539,7 +1539,7 @@ print "Good bye!"
 ```
 注意：以上的无限循环你可以使用 CTRL+C 来中断循环。
 
-## Python for 循环语句
+## 十一、Python for 循环语句
 
 Python for循环可以遍历任何序列的项目，如一个列表或者一个字符串。
 
@@ -1627,7 +1627,7 @@ for num in range(10,20):  # 迭代 10 到 20 之间的数字
 19 是一个质数
 ```
 
-## Python 循环嵌套
+## 十二、Python 循环嵌套
 Python 语言允许在一个循环体里面嵌入另一个循环。
 Python for 循环嵌套语法：
 ```
@@ -1691,7 +1691,7 @@ print "Good bye!"
 Good bye!
 ```
 
-## Python break 语句
+## 十三、Python break 语句
 Python break语句，就像在C语言中，打破了最小封闭for或while循环。
 
 break语句用来终止循环语句，即循环条件没有False条件或者序列还没被完全递归完，也会停止执行循环语句。
@@ -1737,7 +1737,7 @@ print "Good bye!"
 Good bye!
 ```
 
-## Python continue 语句
+## 十四、Python continue 语句
 
 Python continue 语句跳出本次循环，而break跳出整个循环。
 
@@ -1787,7 +1787,7 @@ print "Good bye!"
 Good bye!
 ```
 
-## Python pass 语句
+## 十五、Python pass 语句
 
 Python pass 是空语句，是为了保持程序结构的完整性。
 
@@ -1824,7 +1824,7 @@ print "Good bye!"
 Good bye!
 ```
 
-## Python Number(数字)
+## 十六、Python Number(数字)
 
 Python Number 数据类型用于存储数值。
 
@@ -1990,7 +1990,7 @@ pi         数学常量 pi（圆周率，一般以π来表示）
 e          数学常量 e，e即自然常数（自然常数）。
 ```
 
-## Python 字符串
+## 十七、Python 字符串
 字符串是 Python 中最常用的数据类型。我们可以使用引号('或")来创建字符串。
 
 创建字符串很简单，只要为变量分配一个值即可。例如：
@@ -2207,7 +2207,7 @@ u'Hello World !'
 
 这些方法实现了string模块的大部分方法，如下表所示列出了目前字符串内建支持的方法，所有的方法都包含了对Unicode的支持，有一些甚至是专门用于Unicode的。
 
-## Python 列表(List)
+## 十八、Python 列表(List)
 序列是Python中最基本的数据结构。序列中的每个元素都分配一个数字 - 它的位置，或索引，第一个索引是0，第二个索引是1，依此类推。
 
 Python有6个序列的内置类型，但最常见的是列表和元组。
@@ -2354,7 +2354,7 @@ Python包含以下方法:
                 对原列表进行排序
 ```
 
-## Python 元组
+## 十九、Python 元组
 Python的元组与列表类似，不同之处在于元组的元素不能修改。
 
 元组使用小括号，列表使用方括号。
