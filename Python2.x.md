@@ -1,5 +1,5 @@
 # <bable style = "color: yellowgreen">Python2.x</bable>
-始于2020年1月16日；环境python2.7.18
+始于2020年1月16日；环境python2.7.18(或2.7.**)
 
 ## 一、Python 基础教程
 ```
@@ -2615,7 +2615,91 @@ print "dict['Name']: ", dict['Name']
 ```
 dict['Name']:  Manni
 ```
+2）键必须不可变，所以可以用数字，字符串或元组充当，所以用列表就不行，如下实例：
+```
+#!/usr/bin/python
+ 
+dict = {['Name']: 'Zara', 'Age': 7} 
+ 
+print "dict['Name']: ", dict['Name']
+```
+以上实例输出结果：
+```
+Traceback (most recent call last):
+  File "test.py", line 3, in <module>
+    dict = {['Name']: 'Zara', 'Age': 7} 
+TypeError: list objects are unhashable
+```
 
+### 字典内置函数&方法
+Python字典包含了以下内置函数：
+```
+序号    函数及描述
+1      cmp(dict1, dict2)
+       比较两个字典元素。
+2      len(dict)
+       计算字典元素个数，即键的总数。
+3      str(dict)
+       输出字典可打印的字符串表示。
+4      type(variable)
+       返回输入的变量类型，如果变量是字典就返回字典类型。
+```
+Python字典包含了以下内置方法：
+```
+序号      函数及描述
+1        dict.clear()
+         删除字典内所有元素
+2        dict.copy()
+         返回一个字典的浅复制
+3        dict.fromkeys(seq[, val])
+         创建一个新字典，以序列 seq 中元素做字典的键，val 为字典所有键对应的初始值
+4        dict.get(key, default=None)
+         返回指定键的值，如果值不在字典中返回default值
+5        dict.has_key(key)
+         如果键在字典dict里返回true，否则返回false
+6        dict.items()
+         以列表返回可遍历的(键, 值) 元组数组
+7        dict.keys()
+         以列表返回一个字典所有的键
+8        dict.setdefault(key, default=None)
+         和get()类似, 但如果键不存在于字典中，将会添加键并将值设为default
+9        dict.update(dict2)
+         把字典dict2的键/值对更新到dict里
+10       dict.values()
+         以列表返回字典中的所有值
+11       pop(key[,default])
+         删除字典给定键 key 所对应的值，返回值为被删除的值。key值必须给出。 否则，返回default值。
+12       popitem()
+         返回并删除字典中的最后一对键和值。
+```
+
+## 二十一、Python 日期和时间
+Python 程序能用很多方式处理日期和时间，转换日期格式是一个常见的功能。
+
+Python 提供了一个 time 和 calendar 模块可以用于格式化日期和时间。
+
+时间间隔是以秒为单位的浮点小数。
+
+每个时间戳都以自从1970年1月1日午夜（历元）经过了多长时间来表示。
+
+Python 的 time 模块下有很多函数可以转换常见日期格式。如函数time.time()用于获取当前时间戳, 如下实例:
+```
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+ 
+import time  # 引入time模块
+ 
+ticks = time.time()
+print "当前时间戳为:", ticks
+```
+以上实例输出结果：
+```
+当前时间戳为: 1459994552.51
+```
+时间戳单位最适于做日期运算。但是1970年之前的日期就无法以此表示了。太遥远的日期也不行，UNIX和Windows只支持到2038年。
+
+###  什么是时间元组？
+很多Python函数用一个元组装起来的9组数字处理时间:
 
 
 
