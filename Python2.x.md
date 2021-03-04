@@ -2700,6 +2700,62 @@ print "当前时间戳为:", ticks
 
 ###  什么是时间元组？
 很多Python函数用一个元组装起来的9组数字处理时间:
+```
+序号      字段            值
+0        4位数年         2008
+1        月             1 到 12
+2        日             1到31
+3        小时            0到23
+4        分钟            0到59
+5        秒              0到61 (60或61 是闰秒)
+6        一周的第几日      0到6 (0是周一)
+7        一年的第几日      1到366 (儒略历)
+8        夏令时           -1, 0, 1, -1是决定是否为夏令时的旗帜
+```
+上述也就是struct_time元组。这种结构具有如下属性：
+```
+序号     属性        值
+0       tm_year     2008
+1       tm_mon      1 到 12
+2       tm_mday     1 到 31
+3       tm_hour     0 到 23
+4       tm_min      0 到 59
+5       tm_sec      0 到 61 (60或61 是闰秒)
+6       tm_wday     0到6 (0是周一)
+7       tm_yday     1 到 366(儒略历)
+8       tm_isdst    -1, 0, 1, -1是决定是否为夏令时的旗帜
+```
+### 获取当前时间
+从返回浮点数的时间戳方式向时间元组转换，只要将浮点数传递给如localtime之类的函数。
+```
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+ 
+import time
+ 
+localtime = time.localtime(time.time())
+print "本地时间为 :", localtime
+```
+以上实例输出结果：
+```
+本地时间为 : time.struct_time(tm_year=2016, tm_mon=4, tm_mday=7, tm_hour=10, tm_min=3, tm_sec=27, tm_wday=3, tm_yday=98, tm_isdst=0)
+```
+
+### 获取格式化的时间
+你可以根据需求选取各种格式，但是最简单的获取可读的时间模式的函数是asctime():
+```
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+ 
+import time
+ 
+localtime = time.asctime( time.localtime(time.time()) )
+print "本地时间为 :", localtime
+```
+以上实例输出结果：
+```
+本地时间为 : Thu Apr  7 10:05:21 2016
+```
 
 
 
